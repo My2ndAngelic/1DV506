@@ -15,7 +15,7 @@ public class Convert {
         DecimalFormat df = new DecimalFormat("#.#");
         df.setRoundingMode(HALF_UP);
 
-        double c = ((f - 32) / 9 * 5);
+        double c = ((f - 32) / 9 * 5); // Conversion
         System.out.print("Degree in C: " + df.format(c));
         scan.close();
     }

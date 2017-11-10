@@ -16,8 +16,9 @@ public class WindChill {
         System.out.print("Temperature (C): ");
         T = scan.nextDouble();
         System.out.print("Wind speed (m/s): ");
-        V = scan.nextDouble() * 3.6;
+        V = scan.nextDouble() * 3.6; // Convert km/h to m/s
 
+        // Formula
         Twc = 13.12 + 0.6215 * T - 11.37 * Math.pow(V, 0.16) + 0.3965 * T * Math.pow(V, 0.16);
         System.out.print("Wind Chill Temperature (C): " + df.format(Twc));
 

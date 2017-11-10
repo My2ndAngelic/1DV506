@@ -7,17 +7,17 @@ public class ShortName {
         Scanner scan = new Scanner(System.in);
 
         // Input
+
+
         System.out.print("Enter your first name: ");
         String f = scan.nextLine();
         System.out.print("Enter your last name: ");
         String l = scan.nextLine();
 
-        f = String.valueOf(f.charAt(0));
+        f = " " + f;
+        l = l + "    ";
 
-        StringBuilder last2;
-        l = l.substring(0,4);
-
-        System.out.print("Your name is: " + f + ". " + " " + l);
+        System.out.print("Your name is: " + f.charAt(0) + ". " + l.substring(0, 4));
         scan.close();
     }
 }

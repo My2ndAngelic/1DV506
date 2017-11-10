@@ -10,11 +10,10 @@ public class Backwards {
         String str = scan.nextLine();
 
         String str2 = "";
-        int a = str.length() - 1;
 
         // Reverse
         for (int i = 0; i < str.length(); i++) {
-            str2 = str2 + str.charAt(a - i);
+            str2 = str2 + str.charAt(str.length() - 1 - i);
         }
 
         System.out.println(str2);

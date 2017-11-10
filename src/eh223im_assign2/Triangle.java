@@ -2,8 +2,6 @@ package eh223im_assign2;
 
 import java.util.Scanner;
 
-import static java.lang.Math.floorDiv;
-
 public class Triangle {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -48,7 +46,7 @@ public class Triangle {
         isoTchars[isoT.length() / 2] = '*';                 // Middle character = '*'
         isoT = String.valueOf(isoTchars);                   // Convert back to string
 
-        for (int i = 0; i < (floorDiv(n, 2) + 1); i++) {        // Making triangle
+        for (int i = 0; i < (Math.floorDiv(n, 2) + 1); i++) {        // Making triangle
             isoTchars = isoT.toCharArray();                     // Convert to Array
             isoTchars[isoT.length() / 2 - i] = '*';             // Shift i step backward from middle, change ' ' to '*'
             isoTchars[isoT.length() / 2 + i] = '*';             // Shift i step forward from middle, change ' ' to '*'

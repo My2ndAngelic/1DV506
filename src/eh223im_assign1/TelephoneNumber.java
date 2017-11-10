@@ -10,7 +10,6 @@ public class TelephoneNumber {
         int max;
         int r;
         String x = "", y = "", z = "";
-
         // First set the right bound by (max - min + 1), then add the minimum to shift the left bound
         min = 0;
         max = 9;

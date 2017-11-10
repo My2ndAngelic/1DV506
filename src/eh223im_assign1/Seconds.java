@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class Seconds {
     public static void main(String args[]) {
-        //Variable declare
-        Scanner scan = new Scanner(System.in); //Input scanner
+        Scanner scan = new Scanner(System.in);
 
         //Scan for h,m,s
         System.out.print("Hour: ");
@@ -16,9 +15,8 @@ public class Seconds {
         int sec = scan.nextInt();
 
         //Math & output
-        int secT;
-        secT = hour * 3600 + min * 60 + sec;
-        System.out.print("Total number of seconds: " + secT);
+        sec = hour * 3600 + min * 60 + sec;
+        System.out.print("Total number of seconds: " + sec);
         scan.nextLine();
     }
 }

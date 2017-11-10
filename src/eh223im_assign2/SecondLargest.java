@@ -1,3 +1,7 @@
+/*  Second largest number
+    Solve using Tower of Hanoi principle 
+*/
+
 package eh223im_assign2;
 
 import java.util.Scanner;
@@ -5,11 +9,16 @@ import java.util.Scanner;
 public class SecondLargest {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Enter something: "); int Int = scan.nextInt();
+
+        String inputT= "Enter something: ";
+        System.out.print(inputT);
+        int Int = scan.nextInt();
         int largest1 = Int;
-        System.out.print("Enter something: "); Int = scan.nextInt();
+        System.out.print(inputT);
+        Int = scan.nextInt();
         int largest2 = Int;
         int largest3 = Int;
+
         if (largest1 < largest2) {
             largest3 = largest1;
             largest1 = largest2;
@@ -18,8 +27,8 @@ public class SecondLargest {
 
         int counter = 2;
 
-        while (counter <5) {
-            System.out.print("Enter something: ");
+        while (counter < 7) {
+            System.out.print(inputT);
             Int = scan.nextInt();
             if (Int > largest1) {
                 largest2 = largest1;
@@ -33,7 +42,8 @@ public class SecondLargest {
             counter++;
         }
 
-        System.out.println(largest2);
+        String outputT = "The ";
+        System.out.println(outputT+largest2);
         /*
         int largest = int1;
         int position = 1;
