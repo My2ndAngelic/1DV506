@@ -6,6 +6,7 @@ public class Backwards {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
+        // Input
         System.out.print("Provide a line of text: ");
         String str = scan.nextLine();
 

@@ -7,11 +7,12 @@ public class SumOfThree {
         Scanner scan = new Scanner(System.in);
 
         System.out.print("Enter your number here: ");
-        int k = scan.nextInt();
 
-        int d = k % 10 + (k % 100 - k % 10) / 10 + (k % 1000 - k % 100) / 100;
-        System.out.println("Sum of last three digits: " + d);
-
-        scan.nextLine();
+        int d;
+        for (int k = 100;k<1000;k++) {
+            d = k % 10 + (k % 100 - k % 10) / 10 + (k % 1000 - k % 100) / 100;
+            System.out.println("Sum of last three digits: " + +k+","+d);
+        }
+       // scan.nextLine();
     }
 }

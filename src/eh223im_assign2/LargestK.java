@@ -6,8 +6,10 @@ public class LargestK {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
+        // Input
         System.out.print("Give a positive integer: ");
-        int a = scan.nextInt();
+        int a = 120;
+        System.out.println(a);
 
         int k = 0;
         int sumK = 0;
@@ -18,7 +20,8 @@ public class LargestK {
 
         k = (k - 1) * 2; // Expecting one more sum before the check
 
-        System.out.print("The largest K such that 0+2+4+6+...+K < " + a + " => K = " + k); // Export
+        // Export
+        System.out.print("The largest K such that 0+2+4+6+...+K < " + a + " => K = " + k);
         scan.close();
     }
 }

@@ -9,9 +9,10 @@ public class Triangle {
         System.out.print("Provide an odd positive integer: ");
         int n = scan.nextInt();
 
-        while (((n % 2) == 0) || (n < 1)) {
-            System.out.print("N is not an odd positive number. Please provide an odd positive integer: ");
-            n = scan.nextInt();
+        // Give error and end the program if it is not
+        if (((n % 2) == 0) || (n < 1)) {
+            System.out.println("It is not an odd positive integer.");
+            return;
         }
 
         System.out.println();
@@ -46,7 +47,7 @@ public class Triangle {
         isoTchars[isoT.length() / 2] = '*';                 // Middle character = '*'
         isoT = String.valueOf(isoTchars);                   // Convert back to string
 
-        for (int i = 0; i < (Math.floorDiv(n, 2) + 1); i++) {        // Making triangle
+        for (int i = 0; i < (Math.floorDiv(n, 2) + 1); i++) {   // Making empty line
             isoTchars = isoT.toCharArray();                     // Convert to Array
             isoTchars[isoT.length() / 2 - i] = '*';             // Shift i step backward from middle, change ' ' to '*'
             isoTchars[isoT.length() / 2 + i] = '*';             // Shift i step forward from middle, change ' ' to '*'
