@@ -8,8 +8,12 @@ public class LargestK {
 
         // Input
         System.out.print("Give a positive integer: ");
-        int a = 120;
-        System.out.println(a);
+        int a = scan.nextInt();
+
+        if (a <= 0) {
+            System.out.println("This is not a positive integer");
+            return;
+        }
 
         int k = 0;
         int sumK = 0;

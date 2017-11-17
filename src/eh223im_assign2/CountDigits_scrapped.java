@@ -4,7 +4,7 @@ package eh223im_assign2;
 
 import java.util.Scanner;
 
-public class CountDigits3 {
+public class CountDigits_scrapped {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 

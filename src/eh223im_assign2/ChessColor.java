@@ -7,7 +7,7 @@ public class ChessColor {
         Scanner scan = new Scanner(System.in);
 
         System.out.print("You enter: ");
-        String input = "D5";
+        String input = scan.nextLine();
         input = input.toUpperCase();
 
         int row = (int) input.charAt(0) - 64;

@@ -5,8 +5,6 @@ Obtained while reading some textbook.
 
 package eh223im_assign2;
 
-import java.util.Scanner;
-
 public class ReverseOrder {
     public static void main(String[] args) {
         int[] list = {0, 1, 5, 9, 6, 4, 3, 2, 7, 8};
