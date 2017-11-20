@@ -17,6 +17,7 @@ public class Backwards {
             str2 = str2 + str.charAt(str.length() - 1 - i);
         }
 
+        //
         System.out.println(str2);
         scan.close();
     }

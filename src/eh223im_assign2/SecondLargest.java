@@ -8,21 +8,36 @@ public class SecondLargest {
 
         // Initialize
         int counter = 1;
-        int largest1 = 1, largest2 = 0;
+        int largest1, largest2;
         int input;
 
+        System.out.print("Enter number #" + counter + ": ");
+        input = scan.nextInt();
+        largest1 = input;
+        counter++;
+
+        System.out.print("Enter number #" + counter + ": ");
+        input = scan.nextInt();
+        if (input >= largest1) {
+            largest2 = largest1;
+            largest1 = input;
+        } else {
+            largest2 = input;
+        }
+        counter++;
+
         // Loop: input, compare, push and increase the counter
-        do {
+        while (counter < 11) {
             System.out.print("Enter number #" + counter + ": ");
             input = scan.nextInt();
-            if (input > largest1) {
+            if (input >= largest1) {
                 largest2 = largest1;
                 largest1 = input;
             } else if (input > largest2) {
                 largest2 = input;
             }
             counter++;
-        } while (counter < 11);
+        }
 
         System.out.println("The second largest is: " + largest2);
     }

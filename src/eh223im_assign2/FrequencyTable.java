@@ -6,7 +6,8 @@ import java.util.Random;
 public class FrequencyTable {
     public static void main(String[] args) {
         // Initialize
-        ArrayList numList = new ArrayList<>();
+         ArrayList numList = new ArrayList <Integer>();
+        // int[] numList = new int[6000];
         Random ran = new Random();
         int k = 0, max = 6, min = 1, one = 0, two = 0, three = 0, four = 0, five = 0, six = 0;
 

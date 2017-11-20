@@ -31,9 +31,8 @@ public class HighLow {
             guess = scan.nextInt();
 
             if (n == 10) {
-                System.out.println("You have guessed 10 times incorrectly. You lose.");
-                System.out.println("The correct result is: "+answer);
-                return;
+                System.err.println("You have guessed 10 times incorrectly. You lose.\nThe correct answer is: " + answer);
+                System.exit(-1);
             }
         }
 

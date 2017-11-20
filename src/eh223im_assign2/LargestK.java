@@ -11,10 +11,11 @@ public class LargestK {
         int a = scan.nextInt();
 
         if (a <= 0) {
-            System.out.println("This is not a positive integer");
-            return;
+            System.err.println("This is not a positive integer");
+            System.exit(-1);
         }
 
+        // Add number
         int k = 0;
         int sumK = 0;
         while (sumK < a) {
@@ -22,7 +23,8 @@ public class LargestK {
             sumK = sumK + 2 * k;
         }
 
-        k = (k - 1) * 2; // Expecting one more sum before the check
+        // Expecting one more sum before the check
+        k = (k - 1) * 2;
 
         // Export
         System.out.print("The largest K such that 0+2+4+6+...+K < " + a + " => K = " + k);
