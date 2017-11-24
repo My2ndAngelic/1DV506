@@ -24,18 +24,20 @@ public class Triangle {
             rightT.append(" ");                            // Add space to rightT string to make triangle
         }
 
+        StringBuilder rightTPrint = new StringBuilder();
+
         char[] rightTchars;
         for (int i = 0; i < n; i++) {                         // Adopted from https://stackoverflow.com/questions/6952363/replace-a-character-at-a-specific-index-in-a-string
             rightTchars = rightT.toString().toCharArray();               // Convert to array
             rightTchars[rightT.length() - i - 1] = '*';       // Replace position i-1 with *
             rightT = new StringBuilder(String.valueOf(rightTchars));             // Convert back to string
-            System.out.println(rightT);                       // Print
+            rightTPrint.append(rightT+"\n");                    // Add to print variable and new line afterward
         }
 
-        System.out.println();
+        System.out.println(rightTPrint);                        // Print out
 
-        // Isoscale triangle section
-        System.out.println("Isoscale triangle: ");
+        // Isoscele triangle section
+        System.out.println("Isosceles triangle: ");
         StringBuilder isoT = new StringBuilder();
 
         for (int i = 0; i < n; i++) {
@@ -60,4 +62,8 @@ public class Triangle {
     }
 }
 
-//
+/*
+Using two different algorithm in the program,
+the right triangle will be stored as a single string,
+while the isosceles triangle will be multiple lines.
+*/
