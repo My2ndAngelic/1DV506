@@ -11,11 +11,13 @@ public class SecondLargest {
         int largest1, largest2;
         int input;
 
+        // First number
         System.out.print("Enter number #" + counter + ": ");
         input = scan.nextInt();
         largest1 = input;
         counter++;
 
+        // Second number
         System.out.print("Enter number #" + counter + ": ");
         input = scan.nextInt();
         if (input >= largest1) {

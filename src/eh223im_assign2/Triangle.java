@@ -48,7 +48,7 @@ public class Triangle {
         isoTchars[isoT.length() / 2] = '*';                 // Middle character = '*'
         isoT = new StringBuilder(String.valueOf(isoTchars));                   // Convert back to string
 
-        for (int i = 0; i < (Math.floorDiv(n, 2) + 1); i++) {   // (n/2)+1 lines
+        for (int i = 0; i < (Math.floorDiv(n, 2) + 1); i++) {   // Repeat (n/2)+1 lines
             isoTchars = isoT.toString().toCharArray();                     // Convert to Array
             isoTchars[isoT.length() / 2 - i] = '*';             // Shift i step backward from middle, change ' ' to '*'
             isoTchars[isoT.length() / 2 + i] = '*';             // Shift i step forward from middle, change ' ' to '*'

@@ -14,8 +14,8 @@ public class Reverse {
 
         char[] revtext = new char[text.length];
 
-        for (int i = 0;i<text.length;i++) {
-            revtext[i]=text[text.length-i-1];
+        for (int i = 0; i < text.length; i++) {
+            revtext[i] = text[text.length - i - 1];
         }
 
         System.out.println(text);

@@ -8,14 +8,15 @@ public class CountDigits {
 
         // Input integer, convert to String
         System.out.print("Please enter a positive integer: ");
-        int inputI = Math.abs(90529);
+        int inputI = Math.abs(scan.nextInt());
         String inputS = Integer.toString(inputI);
-        System.out.println(inputS);
+
+        // Initialization
         int zero = 0, odd = 0, even = 0, a = 0;
         int counter = 0;
 
         // Count number of digit
-        if (inputI == 0) { // If 0, count 1
+        if (inputI == 0) { // If 0, count as 1
             counter++;
         } else {
             counter = (int) Math.floor(Math.log10(inputI)) + 1; // If not, take log10 of it, then floor it, and + 1
@@ -31,7 +32,7 @@ public class CountDigits {
             } else {
                 odd++;
             }
-            inputI=inputI/10;
+            inputI = inputI / 10;
         }
 
         // Output

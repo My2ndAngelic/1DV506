@@ -21,7 +21,7 @@ public class Palindrome {
 
         // Reverse
         for (int i = 0; i < str2.length(); i++) {
-            str3 += str2.charAt(str2.length()-i-1);
+            str3 += str2.charAt(str2.length() - i - 1);
         }
 
         // Convert to upper case
