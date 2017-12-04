@@ -17,6 +17,7 @@ public class SweID {
 
         System.out.println("female: "+isFemaleNumber(str));
         System.out.println("male: "+isMaleNumber(str));
+        System.out.println("leap: "+isLeap("001203"));
 
         if (isValidID(str)) {
             strarr[0] = "valid ID.";
@@ -315,12 +316,8 @@ public class SweID {
 
     // Check if year is leap, requires year in 4 numbers
     private static boolean isLeap(String str) {
-        boolean leap = true;
-        int year = Integer.parseInt(str);
-
-        leap = year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
-
-        return leap;
+        int year = Integer.parseInt(getYear(str,4));
+        return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
     }
 
     // Generate ID, repeat until valid is generated.

@@ -4,27 +4,31 @@ import java.util.Scanner;
 
 public class MultiDisplay {
 
-    public String setDisplayMessage (String args) {
-        Scanner scan = new Scanner(System.in);
-        this.arg = scan.next();
+    private int count = 420;
+    private String arg = "Senpai, print something. You are gay.";
+
+    private String setDisplayMessage (String args) {
+        this.arg = args;
         return args;
     }
 
-    private String arg = "";
 
     public void setDisplayCount (int ints) {
-        for (int i = 0; i<ints;i++) {
-            System.out.println(setDisplayMessage(arg));
+        this.count = ints;
+    }
+
+    public void display () {
+        for (int i = 0;i<10;i++) {
+            System.out.println("You are gay");
         }
     }
 
-    private void display (String[] arg) {
+    private void display (String[] arg,int count) {
 
     }
 
-    private void count (int ints) {
+    public static void main(String[] args) {
 
     }
-
 
 }
