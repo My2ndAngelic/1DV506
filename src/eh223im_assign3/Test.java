@@ -1,20 +1,89 @@
 package eh223im_assign3;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
+
+
 public class Test {
-    public static void Check(String str) {
-        System.out.println("Done ex 1.");
-        System.out.println("Done ex 2.");
-    }
 
     public static void main(String[] args) {
-        StringBuilder stringBuilder = new StringBuilder();
-        Random ran = new Random();
+        String str = "10 Heart";
+        int pos = 0;
+        int val = 0;
+        String str2 = "";
+        do {
+            str2 = str.substring(0, pos + 1);
+            pos++;
+        } while (str.charAt(pos) != 32);
 
-        String sb = "6603109288";
-        System.out.println(sb.substring(2,4));
+        String str3 = str.substring(str2.length() - 1, 1);
+
+        switch (str3) {
+            case "H":
+                val = 0;
+                break;
+            case "D":
+                val = 1;
+                break;
+            case "C":
+                val = 2;
+                break;
+            case "S":
+                val = 3;
+                break;
+            default:
+                val = -1;
+                break;
+        }
+
+
+        System.out.println(str3);
+    }
+}
+//        System.out.println(cardVal("10 Spade"));
+
+//        ArrayList <String> deck2 = new ArrayList<>();
+//
+//        for (int i = 1; i<14; i++) {
+//            for (int j = 0; j<4; j++) {
+//                String type = "";
+//                String val = "";
+//                switch (j) {
+//                    case 0: type = "Heart"; break;
+//                    case 1: type = "Diamond"; break;
+//                    case 2: type = "Club"; break;
+//                    case 3: type = "Spade"; break;
+//                    default: break;
+//                }
+//
+//                switch (i) {
+//                    case 1: val = "A"; break;
+//                    case 11: val = "J";break;
+//                    case 12: val = "Q";break;
+//                    case 13: val = "K";break;
+//                    default: val = Integer.toString(i); break;
+//                }
+//                deck2.add(val+ " " +type);
+//            }
+//        }
+
+//        System.out.println(deck2.toString());
+
+
+
+//        System.out.println("Done ex 1.");
+//        System.out.println("Done ex 2.");
+//    }
+//
+//    public static void main(String[] args) {
+//        StringBuilder stringBuilder = new StringBuilder();
+//        Random ran = new Random();
+//
+//        String sb = "6603109288";
+//        System.out.println(sb.substring(2,4));
 
 //        int year = ran.nextInt(1900);
 //        int month = ran.nextInt(12) - 1;
@@ -125,5 +194,32 @@ public class Test {
 //            System.out.println("True");
 //        } else System.out.println("False");
 
-    }
-}
+
+
+//    public static int cardVal (String str) {
+//        int pos = 0;
+//        int val = 0;
+//        String str2 = "";
+//        do {
+//            str2 = str.substring(0,pos+1);
+//            pos++;
+//        } while (str.charAt(pos) != 32);
+//
+//        switch (str2.toString()) {
+//            case "A": val = 1; break;
+//            case "2": val = 2; break;
+//            case "3": val = 3; break;
+//            case "4": val = 4; break;
+//            case "5": val = 5; break;
+//            case "6": val = 6; break;
+//            case "7": val = 7; break;
+//            case "8": val = 8; break;
+//            case "9": val = 9; break;
+//            case "10":val = 10; break;
+//            case "J": val = 11; break;
+//            case "K": val = 12; break;
+//            case "Q": val = 13; break;
+//            default: break;
+//        }
+//        return val;
+//    }

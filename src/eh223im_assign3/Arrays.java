@@ -3,25 +3,6 @@ package eh223im_assign3;
 import java.util.Scanner;
 
 public class Arrays {
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Are you gay: ");
-        int[] help = {31, 0, 4, 5, 6, 7};
-        int[] help2 = {4, 5, 6, 7};
-
-        System.out.println(hasSubsequence(help, help2));
-
-
-        int[] k = addN(help, 5);
-
-        System.out.println(toString(k));
-        reverse(k);
-
-        System.out.println(toString(k));
-        System.out.println(toString(reverse(k)));
-        //sort(k);
-        System.out.println(toString(k));
-    }
 
     // Check if subarray exists
     public static boolean hasSubsequence(int[] arr, int[] sub) {
@@ -41,9 +22,7 @@ public class Arrays {
                     }
                 }
 
-                if (com == true) {
-                    break;
-                }
+                if (com) break;
             }
         } else if (sub.length == arr.length) { // If equal, compare each and every element
             for (int i = 0;i<arr.length;i++) {
