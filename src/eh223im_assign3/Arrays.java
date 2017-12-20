@@ -1,7 +1,5 @@
 package eh223im_assign3;
 
-import java.util.Scanner;
-
 public class Arrays {
 
     // Check if subarray exists
@@ -41,26 +39,25 @@ public class Arrays {
 
     // Sort array
     public static int[] sort(int[] arr) {
-        int[] arrTemp = arr;
         int temp;
         boolean check = false;
-        while (check == false) {
+        while (!check) {
             for (int i = 1; i < arr.length; i++) {
-                if (arrTemp[i - 1] > arrTemp[i]) {
-                    temp = arrTemp[i - 1];
-                    arrTemp[i - 1] = arrTemp[i];
-                    arrTemp[i] = temp;
+                if (arr[i - 1] > arr[i]) {
+                    temp = arr[i - 1];
+                    arr[i - 1] = arr[i];
+                    arr[i] = temp;
                 }
             }
             check = true;
             for (int i = 1; i < arr.length; i++) {
-                if (arrTemp[i - 1] > arrTemp[i]) {
+                if (arr[i - 1] > arr[i]) {
                     check = false;
                     break;
                 }
             }
         }
-        return arrTemp;
+        return arr;
     }
 
     // Reverse array

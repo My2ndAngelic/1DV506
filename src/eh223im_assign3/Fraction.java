@@ -1,8 +1,8 @@
 package eh223im_assign3;
 
 public class Fraction {
-    private int Numerator = 1;
-    private int Denominator = 1;
+    private int Numerator;
+    private int Denominator;
 
     private boolean isNegative = false;
 
@@ -22,8 +22,8 @@ public class Fraction {
         Denominator = 1;
     }
 
-    private boolean isValid (Fraction F) {
-        return getDenominator(F) != 0;
+    private boolean isValid(Fraction f) {
+        return getDenominator(f) != 0;
     }
 
     public double getFraction() {
@@ -31,9 +31,15 @@ public class Fraction {
     }
 
     public String toString() {
-        switch (Denominator) {
-            case 1: return Integer.toString(Numerator);
-            default: return Numerator + "/" + Denominator;
+        if (Numerator == 0) {
+            return "0";
+        } else {
+            switch (Denominator) {
+                case 1:
+                    return Integer.toString(Numerator);
+                default:
+                    return Numerator + "/" + Denominator;
+            }
         }
     }
 
@@ -45,7 +51,7 @@ public class Fraction {
         return f.Numerator;
     }
 
-    public int getDenominator(Fraction f) {
+    int getDenominator(Fraction f) {
         return f.Denominator;
     }
 
@@ -60,31 +66,49 @@ public class Fraction {
     private int getGCD(Fraction f) {
         int n = f.Numerator;
         int d = f.Denominator;
-        while (n != d) {
-            if (n > d) {
-                n = n - d;
-            } else d = d - n;
+        if (n == 0 || d == 0) {
+            return 0;
+        } else {
+            while (n != d) {
+                if (n > d) {
+                    n = n - d;
+                } else d = d - n;
+            }
         }
         return n;
     }
 
     private int getGCD(int n, int d) {
-        while (n != d) {
-            if (n > d) {
-                n = n - d;
-            } else d = d - n;
+        if (n == 0 || d == 0) {
+            return 0;
+        } else {
+            while (n != d) {
+                if (n > d) {
+                    n = n - d;
+                } else d = d - n;
+            }
         }
         return n;
     }
 
     public Fraction simplify(Fraction f) {
-        int n = Numerator / getGCD(f);
-        int d = Denominator / getGCD(f);
-        return new Fraction(n, d);
+        int n = Numerator;
+        int d;
+        if (n == 0) {
+            return new Fraction(0, 1);
+        } else {
+            n = Numerator / getGCD(f);
+            d = Denominator / getGCD(f);
+            return new Fraction(n, d);
+        }
     }
 
-    public Fraction simplify (int N, int D) {
-        return new Fraction(N / getGCD(N,D), D / getGCD(N,D));
+    public Fraction simplify(int n, int d) {
+        if (n == 0 || d == 0) {
+            return new Fraction(0, d);
+        } else {
+            return new Fraction(n / getGCD(n, d), d / getGCD(n, d));
+        }
     }
 
     public Fraction subtract(Fraction f) {
@@ -96,10 +120,20 @@ public class Fraction {
     }
 
     public Fraction divide(Fraction f) {
-        return new Fraction(Numerator * f.Denominator, Denominator * f.Numerator);
+        if (Denominator == 0 || f.Numerator == 0) {
+            System.out.println("Cannot divide. Return 0 instead.");
+            return new Fraction(0, 1);
+        } else {
+            return new Fraction(Numerator * f.Denominator, Denominator * f.Numerator);
+        }
     }
 
     public boolean isEqualTo(Fraction f) {
         return Numerator * f.Denominator == Denominator * f.Numerator;
     }
 }
+
+/*
+ * Documentation
+ *
+ */

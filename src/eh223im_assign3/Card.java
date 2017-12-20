@@ -14,10 +14,18 @@ public class Card { // Card info, using enum
     }
 
     public CardList.Suit getSuit(Card c) {
-        return suit;
+        return c.suit;
     }
 
     public CardList.Rank getRank(Card c) {
+        return c.rank;
+    }
+
+    public CardList.Suit getSuit() {
+        return suit;
+    }
+
+    public CardList.Rank getRank() {
         return rank;
     }
 

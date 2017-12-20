@@ -6,7 +6,6 @@ public class Play123Main {
         Deck d = new Deck();
 
         boolean status = true;
-        boolean win = true;
         int w = 0;
         int counter = 1;
 
@@ -57,7 +56,6 @@ public class Play123Main {
             System.out.println("Games so far: "+counter);
             d.deckRebuild(); // rebuild the deck
             d.shuffle(); // shuffle
-            win = true; // reset
             status = true; // reset
             counter++; // count playtime
         } while (counter < 10000000);
