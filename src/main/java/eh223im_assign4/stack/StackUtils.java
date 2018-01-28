@@ -7,7 +7,9 @@ public class StackUtils implements Stack {
     Object[] obj = new Object[0];
     int size = obj.length;
 
-    public int size() { return size; }
+    public int size() {
+        return size;
+    }
 
     public boolean isEmpty() {
         try {
@@ -44,14 +46,14 @@ public class StackUtils implements Stack {
 
     // Add one to the top, then update array & size
     public void push(Object element) {
-        Object[] temp = new Object[size+1];
+        Object[] temp = new Object[size + 1];
         temp[0] = element;
         System.arraycopy(obj, 0, temp, 1, size);
         size++;
         obj = temp;
     }
 
-    public Iterator<Object> iterator() {
-        return new StackIterator<Object> (obj, size);
+    public Iterator <Object> iterator() {
+        return new StackIterator <Object>(obj, size);
     }
 }

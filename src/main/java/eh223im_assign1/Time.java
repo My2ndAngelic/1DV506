@@ -1,4 +1,4 @@
-package backup.eh223im_assign1;
+package eh223im_assign1;
 
 import java.util.Scanner;
 

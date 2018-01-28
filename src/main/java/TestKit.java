@@ -16,6 +16,8 @@ import static eh223im_assign4.TestKit.Mode.NULL;
 
 public class TestKit {
 
+    Mode mode;
+
     // Histogram test (default: 100 numbers, 200 random integers); using method overloading
     public void HistogramTest() throws FileNotFoundException {
         File f = new File("input.txt");
@@ -28,6 +30,7 @@ public class TestKit {
 
         pw.close();
     }
+
     public void HistogramTest(int n) throws FileNotFoundException {
         File f = new File("input.txt");
         Random r = new Random();
@@ -39,6 +42,7 @@ public class TestKit {
 
         pw.close();
     }
+
     public void HistogramTest(int n, int bound) throws FileNotFoundException {
         File f = new File("input.txt");
         Random r = new Random();
@@ -50,13 +54,6 @@ public class TestKit {
 
         pw.close();
     }
-
-    // CountCharTest (), using optional parameters
-    enum Mode {
-        ASCII, WEBPAGE, FILE, UNICODE, ALPHANUMERIC, PARAGRAPH, NULL
-    }
-
-    Mode mode;
 
     public void CountCharTest(Mode mode, Object n) throws Exception {
         File f = new File("input.txt");
@@ -72,7 +69,7 @@ public class TestKit {
         switch (mode) {
             case ASCII:
                 try {
-                    n = Integer.parseInt(n.toString()) ;
+                    n = Integer.parseInt(n.toString());
                 } catch (Exception e) {
                     n = 100;
                 }
@@ -95,12 +92,12 @@ public class TestKit {
 
             case FILE:
                 n = Files.notExists(Paths.get(n.toString())) ? "input.txt" : n.toString();
-                Files.copy(Paths.get(n.toString()),Paths.get("temp.txt"),StandardCopyOption.REPLACE_EXISTING);
+                Files.copy(Paths.get(n.toString()), Paths.get("temp.txt"), StandardCopyOption.REPLACE_EXISTING);
                 break;
 
             case UNICODE:
                 try {
-                    n = Integer.parseInt(n.toString()) ;
+                    n = Integer.parseInt(n.toString());
                 } catch (Exception e) {
                     n = 100;
                 }
@@ -112,7 +109,7 @@ public class TestKit {
 
             case ALPHANUMERIC:
                 try {
-                    n = Integer.parseInt(n.toString()) ;
+                    n = Integer.parseInt(n.toString());
                 } catch (Exception e) {
                     n = 100;
                 }
@@ -125,11 +122,11 @@ public class TestKit {
 
             case PARAGRAPH:
                 try {
-                    n = Integer.parseInt(n.toString()) ;
+                    n = Integer.parseInt(n.toString());
                 } catch (Exception e) {
                     n = 100;
                 }
-                String paragraph = (upper)+(lower)+(number)+(print);
+                String paragraph = (upper) + (lower) + (number) + (print);
                 for (int i = 0; i < Integer.parseInt(n.toString()); i++) {
                     pw.write(paragraph.charAt(new Random().nextInt(paragraph.length())));
                 }
@@ -139,13 +136,18 @@ public class TestKit {
                 if (Files.notExists(Paths.get("input.txt"))) {
                     Files.createFile(Paths.get("input.txt"));
                 } else {
-                    Files.copy(Paths.get("input.txt"),Paths.get("temp.txt"),StandardCopyOption.REPLACE_EXISTING);
+                    Files.copy(Paths.get("input.txt"), Paths.get("temp.txt"), StandardCopyOption.REPLACE_EXISTING);
                 }
                 break;
         }
         pw.close();
-        Files.copy(Paths.get("temp.txt"),Paths.get("input.txt"),StandardCopyOption.REPLACE_EXISTING);
+        Files.copy(Paths.get("temp.txt"), Paths.get("input.txt"), StandardCopyOption.REPLACE_EXISTING);
         Files.delete(Paths.get("temp.txt"));
+    }
+
+    // CountCharTest (), using optional parameters
+    enum Mode {
+        ASCII, WEBPAGE, FILE, UNICODE, ALPHANUMERIC, PARAGRAPH, NULL
     }
 
     // Stack? Too hard, can't write the test kit for that.

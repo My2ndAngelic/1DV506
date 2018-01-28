@@ -10,8 +10,4 @@ public class WriterCheck {
     private int h;
     private String note;
 
-
-    WriterCheck() {
-        String Nationality = nationality;
-    }
 }

@@ -1,0 +1,4 @@
+10001;Stockholm
+10002;Gothenburg
+10003;Liverpool
+10004;Sydney
